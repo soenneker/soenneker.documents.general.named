@@ -42,7 +42,7 @@
     </ItemGroup>
 
     <ItemGroup>
-      <PackageReference Include="Soenneker.Documents.General" Version="3.0.18" />
+      <PackageReference Include="Soenneker.Documents.General" Version="3.0.19" />
       <PackageReference Include="Soenneker.Documents.Named" Version="3.0.2412" />
     </ItemGroup>
 </Project>
