@@ -1,5 +1,6 @@
 ﻿using Soenneker.Documents.General.Abstract;
 using Soenneker.Documents.Named.Abstract;
+using Soenneker.Documents.Typed.Named.Abstract;
 
 namespace Soenneker.Documents.General.Named.Abstract;
 
@@ -7,6 +8,4 @@ namespace Soenneker.Documents.General.Named.Abstract;
 /// Essentially just adds Name to the document <para/>
 /// <inheritdoc cref="IGeneralDocument"/>
 /// </summary>
-public interface INamedGeneralDocument : INamedDocument, IGeneralDocument
-{
-}
+public interface INamedGeneralDocument : INamedTypedDocument, IGeneralDocument;

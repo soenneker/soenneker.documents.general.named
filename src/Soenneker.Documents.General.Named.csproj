@@ -35,14 +35,13 @@
     <ContinuousIntegrationBuild>true</ContinuousIntegrationBuild></PropertyGroup>
 
     <ItemGroup>
-        
         <None Include="..\README.md" Pack="true" PackagePath="\" />
         <None Include="..\LICENSE" Pack="true" PackagePath="\" />
         <None Include="..\icon.png" Pack="true" PackagePath="\" />
     </ItemGroup>
 
     <ItemGroup>
-      <PackageReference Include="Soenneker.Documents.General" Version="3.0.116" />
-      <PackageReference Include="Soenneker.Documents.Named" Version="3.0.2560" />
+      <PackageReference Include="Soenneker.Documents.General" Version="3.0.117" />
+      <PackageReference Include="Soenneker.Documents.Typed.Named" Version="3.0.1" />
     </ItemGroup>
 </Project>

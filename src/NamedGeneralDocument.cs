@@ -1,13 +1,7 @@
-﻿using System.Text.Json.Serialization;
-using Newtonsoft.Json;
-using Soenneker.Documents.General.Named.Abstract;
+﻿using Soenneker.Documents.General.Named.Abstract;
+using Soenneker.Documents.Typed.Named;
 
 namespace Soenneker.Documents.General.Named;
 
 /// <inheritdoc cref="INamedGeneralDocument"/>
-public abstract class NamedGeneralDocument : GeneralDocument, INamedGeneralDocument
-{
-    [JsonPropertyName("name")]
-    [JsonProperty("name")]
-    public virtual string Name { get; set; } = null!;
-}
+public abstract class NamedGeneralDocument : NamedTypedDocument, INamedGeneralDocument;
