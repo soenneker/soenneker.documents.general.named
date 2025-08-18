@@ -1,5 +1,4 @@
 ﻿using Soenneker.Documents.General.Abstract;
-using Soenneker.Documents.Named.Abstract;
 using Soenneker.Documents.Typed.Named.Abstract;
 
 namespace Soenneker.Documents.General.Named.Abstract;
