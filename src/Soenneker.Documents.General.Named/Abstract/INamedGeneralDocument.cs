@@ -4,7 +4,6 @@ using Soenneker.Documents.Typed.Named.Abstract;
 namespace Soenneker.Documents.General.Named.Abstract;
 
 /// <summary>
-/// Essentially just adds Name to the document <para/>
-/// <inheritdoc cref="IGeneralDocument"/>
+/// Identifies a general-purpose typed document that has a name.
 /// </summary>
 public interface INamedGeneralDocument : INamedTypedDocument, IGeneralDocument;

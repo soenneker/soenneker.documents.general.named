@@ -5,14 +5,38 @@
 
 # Soenneker.Documents.General.Named
 
-Essentially just adds Name to the document.
+Provides a semantic base type for general-purpose documents that have both a type discriminator and a name.
 
-## Install
+## Installation
 
 ```bash
 dotnet add package Soenneker.Documents.General.Named
 ```
 
-## What you get
+## Usage
 
-- `INamedGeneralDocument` — Essentially just adds Name to the document.
+```csharp
+using Soenneker.Documents.General.Named;
+
+public sealed class TemplateDocument : NamedGeneralDocument
+{
+    public override string EntityType { get; set; } = "template";
+
+    public string Content { get; set; } = null!;
+}
+
+var template = new TemplateDocument
+{
+    DocumentId = "welcome-email",
+    PartitionKey = "tenant-7",
+    CreatedAt = DateTimeOffset.UtcNow,
+    Name = "Welcome email",
+    Content = "Hello..."
+};
+```
+
+The inherited fields serialize as `id`, `partitionKey`, `createdAt`, `modifiedAt`, `entityType`, and `name` with both System.Text.Json and Newtonsoft.Json attributes.
+
+`NamedGeneralDocument` adds no persistence, validation, or discriminator logic. Derived types must implement `EntityType`; callers must initialize identity, timestamps, and `Name` before persistence. Keep `EntityType` stable if it is used to select a concrete model during reads.
+
+`INamedGeneralDocument` combines the `IGeneralDocument` and `INamedTypedDocument` marker contracts without adding members. Use it when registration or persistence code needs to select this document family.
