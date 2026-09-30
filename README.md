@@ -35,7 +35,7 @@ var template = new TemplateDocument
 };
 ```
 
-The inherited fields serialize as `id`, `partitionKey`, `createdAt`, `modifiedAt`, `entityType`, and `name` with both System.Text.Json and Newtonsoft.Json attributes.
+The inherited fields serialize as `id`, `partitionKey`, `createdAt`, `modifiedAt`, `entityType`, and `name` with System.Text.Json attributes.
 
 `NamedGeneralDocument` adds no persistence, validation, or discriminator logic. Derived types must implement `EntityType`; callers must initialize identity, timestamps, and `Name` before persistence. Keep `EntityType` stable if it is used to select a concrete model during reads.
 
